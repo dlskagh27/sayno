@@ -7,10 +7,11 @@ import time
 #파일 이미지 다운로드
 import urllib.request
 
-chrome_options = Options()
-chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
-chrome_options.add_experimental_option("detach", True)
-driver = webdriver.Chrome(options=chrome_options)
+# chrome_options = Options()
+# chrome_options.add_experimental_option("excludeSwitches", ["enable-logging"])
+# chrome_options.add_experimental_option("detach", True)
+# driver = webdriver.Chrome(options=chrome_options)
+driver = webdriver.Chrome()
 # 구글 이미지 사이트로 간다
 driver.get("https://www.google.co.kr/imghp?hl=ko&tab=ri&ogbl")
 elem = driver.find_element(By.NAME, "q")
@@ -57,7 +58,7 @@ for image in images:
         imgurl = driver.find_element(By.CSS_SELECTOR, ".n3VNCb ").get_attribute("src")
        
         # 이미지 다운받는 곳
-        urllib.request.urlretrieve(imgurl,"./selenium/img/"+str(count) +".jpg")
+        urllib.request.urlretrieve(imgurl,str(count) +".jpg")
         # urllib.request.urlretrieve(imgurl,str(count) +".jpg")
         count = count +1
     except :
