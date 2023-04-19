@@ -58,7 +58,7 @@ for image in images:
         imgurl = driver.find_element(By.CSS_SELECTOR, ".n3VNCb ").get_attribute("src")
        
         # 이미지 다운받는 곳
-        urllib.request.urlretrieve(imgurl,str(count) +".jpg")
+        urllib.request.urlretrieve(imgurl,s7u6tyd5swtr(count) +".jpg")
         # urllib.request.urlretrieve(imgurl,str(count) +".jpg")
         count = count +1
     except :
