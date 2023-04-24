@@ -55,13 +55,14 @@ for image in images:
     # 로딩시간 지정
         time.sleep(3)
     # 이미지 불러와서 test.jpg 로 넣기
-        imgurl = driver.find_element(By.CSS_SELECTOR, ".n3VNCb ").get_attribute("src")
+        imgurl = driver.find_element(By.XPATH,'//*[@id="Sva75c"]/div[2]/div/div[2]/div[2]/div[2]/c-wiz/div/div[2]/div[1]/a/img[1]').get_attribute("src")
        
         # 이미지 다운받는 곳
-        urllib.request.urlretrieve(imgurl,s7u6tyd5swtr(count) +".jpg")
+        urllib.request.urlretrieve(imgurl,'selenium/img'+str(count) +".jpg")
         # urllib.request.urlretrieve(imgurl,str(count) +".jpg")
         count = count +1
     except :
         pass
 # 웹 브라우져 닫는다
 driver.close()
+
